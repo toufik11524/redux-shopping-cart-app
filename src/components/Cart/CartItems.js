@@ -2,8 +2,12 @@ import React from "react";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const CartItems = () => {
   const cartItems = useSelector((state) => state.cart.itemsList);
+  const navigate = useNavigate();
+
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
@@ -21,6 +25,9 @@ const CartItems = () => {
           </li>
         ))}
       </ul>
+      <button onClick={() => {
+        navigate('/');
+      }}>Back</button>
     </div>
   );
 };

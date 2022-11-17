@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-const DUMMY_PRODUCTS = [
+const dummyProducts = [
   {
     id: 1,
     name: "MacBook",
@@ -37,11 +37,12 @@ const DUMMY_PRODUCTS = [
     price: 25,
   },
 ];
+
 const Products = () => {
   return (
     <div>
       <ul className="products-container">
-        {DUMMY_PRODUCTS.map((product, index) => (
+        {dummyProducts.map((product, index) => (
           <li key={index}>
             <Product
               id={product.id}

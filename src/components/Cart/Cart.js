@@ -1,16 +1,18 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../../store/Cart/cartSlice";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./Cart.css";
+
+
 const Cart = () => {
   const quantity = useSelector((state) => state.cart.totalQuantity);
-  const dispatch = useDispatch();
-  const showCart = () => {
-    dispatch(cartActions.setShowCart());
-  };
+  const navigate = useNavigate();
+
   return (
     <div className="cartIcon">
-      <h3 onClick={showCart}>Cart: {quantity} Items</h3>
+      <h3 onClick={()=> {
+        navigate('/cart')
+      }}>Cart: {quantity} Items</h3>
     </div>
   );
 };

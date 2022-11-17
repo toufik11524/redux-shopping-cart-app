@@ -1,17 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import './App.css';
+import Layout from './components/Layout/Layout';
 import CartItems from './components/Cart/CartItems';
-import Header from './components/Header/Header';
-import Products from './components/Products/Products';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const showCart = useSelector((state) => state.cart.showCart);
+  
   return (
     <div className="App">
-      <Header />
-      <Products />
-      { showCart && <CartItems />}
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="/cart" element={<CartItems />} />
+      </Routes>
+      
     </div>
   );
 }
