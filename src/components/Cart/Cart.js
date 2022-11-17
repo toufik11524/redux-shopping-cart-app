@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
-
 const Cart = () => {
   const quantity = useSelector((state) => state.cart.totalQuantity);
   const navigate = useNavigate();
